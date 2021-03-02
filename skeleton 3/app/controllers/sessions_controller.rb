@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    debugger
+    
     user = User.find_by_credentials(params[:user][:user_name], params[:user][:password])
     #return user ? session[:session_token] = user.reset_session_token! : render(:new)
     if user
@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
     else
       render(:new)
     end
-    p session
+  
   end
 
   def destroy
